@@ -1,7 +1,6 @@
 package com.pluralsight;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -26,9 +25,24 @@ public class TransactionFileManager {
                     transactions.add(new Transaction(date, time, description, vendor, amount));
                 }
             }
+        } catch (IOException e) {
+            System.out.println("No previous transactions found.");
+        }
 
+        return transactions;
+    }
 
+    public static void saveTransaction(Transaction transaction) {
+        try (PrintWriter out = new PrintWriter(new FileWriter(FILE_NAME, true))) {
+            out.printf("%s|%s|%s|%s|%.2f%n",
+                    transaction.getDate(),
+                    transaction.getTime(),
+                    transaction.getDescription(),
+                    transaction.getVendor(),
+                    transaction.getAmount());
+        } catch (IOException e) {
+            System.out.println("Error saving transaction: " + e.getMessage());
 
-
+        }
     }
 }

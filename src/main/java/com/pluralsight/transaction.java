@@ -5,61 +5,61 @@ import java.time.LocalTime;
 
 public class transaction {
 
-    private LocalDate date;
-    private LocalTime time;
-    private String description;
-    private String vendor;
-    private double amount;
+    private LocalDate Date;
+    private LocalTime Time;
+    private String Description;
+    private String Vendor;
+    private double Amount;
 
     public transaction(LocalDate date, LocalTime time, String description, String vendor, double amount) {
-        this.date = date;
-        this.time = time;
-        this.description = description;
-        this.vendor = vendor;
-        this.amount = amount;
+        this.Date = date;
+        this.Time = time;
+        this.Description = description;
+        this.Vendor = vendor;
+        this.Amount = amount;
     }
 
     public LocalDate getDate() {
-        return date;
+        return Date;
     }
 
     public void setDate(LocalDate date) {
-        this.date = date;
+        this.Date = date;
     }
 
     public LocalTime getTime() {
-        return time;
+        return Time;
     }
 
     public void setTime(LocalTime time) {
-        this.time = time;
+        this.Time = time;
     }
 
     public String getDescription() {
-        return description;
+        return Description;
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.Description = description;
     }
 
     public String getVendor() {
-        return vendor;
+        return Vendor;
     }
 
     public void setVendor(String vendor) {
-        this.vendor = vendor;
+        this.Vendor = vendor;
     }
 
     public double getAmount() {
-        return amount;
+        return Amount;
     }
 
     public void setAmount(double amount) {
-        this.amount = amount;
+        this.Amount = amount;
     }
 
     // @Override
     public String toString() {
-        return date + "|" + time + "|" + description + "|" + vendor + "|" + amount;
+        return Date + "|" + Time + "|" + Description + "|" + Vendor + "|" + Amount;
     }}
