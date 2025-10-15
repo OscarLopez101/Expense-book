@@ -74,3 +74,12 @@ private static void showYearToDate(List<transaction> transactions) {
             .forEach(System.out::println);
 }
 
+private static void showPreviousYear(List<transaction> transactions) {
+    LocalDate now = LocalDate.now();
+    int previousYear = now.minusYears(1).getYear();
+
+    System.out.println("\n--- PREVIOUS YEAR ---");
+    transactions.stream()
+            .filter(t -> t.getDate().getYear() == previousYear)
+            .forEach(System.out::println);
+}
