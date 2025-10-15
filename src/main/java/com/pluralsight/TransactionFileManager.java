@@ -4,13 +4,14 @@ import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.List;
 
 public class TransactionFileManager {
 
     private static final String FILE_NAME = "transactions.csv";
 
-    public static List<Transaction> loadTransactions() {
-        List<Transaction> transactions = new ArrayList<>();
+    public static List<transaction> loadTransactions() {
+        List<transaction> transactions = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(FILE_NAME))) {
             String line;
@@ -22,7 +23,7 @@ public class TransactionFileManager {
                     String description = parts[2];
                     String vendor = parts[3];
                     double amount = Double.parseDouble(parts[4]);
-                    transactions.add(new Transaction(date, time, description, vendor, amount));
+                    transactions.add(new transaction(date, time, description, vendor, amount));
                 }
             }
         } catch (IOException e) {
@@ -32,7 +33,7 @@ public class TransactionFileManager {
         return transactions;
     }
 
-    public static void saveTransaction(Transaction transaction) {
+    public static void saveTransaction(transaction transaction) {
         try (PrintWriter out = new PrintWriter(new FileWriter(FILE_NAME, true))) {
             out.printf("%s|%s|%s|%s|%.2f%n",
                     transaction.getDate(),

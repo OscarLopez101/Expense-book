@@ -18,6 +18,25 @@ public class Menu {
             System.out.print("Choose an option: ");
             String choice = scanner.nextLine().toUpperCase();
 
+            switch (choice) {
+
+                case "D":
+                    addTransaction(transactions, true);
+                    break;
+                case "P":
+                    addTransaction(transactions, false);
+                    break;
+                case "L":
+                    Ledger.displayLedger(transactions);
+                    break;
+                case "X":
+                    System.out.println("Goodbye");
+                    return;
+                default:
+                    System.out.println("Invalid option");
+
+            }
+
         }
     }
 }
