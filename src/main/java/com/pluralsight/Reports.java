@@ -32,7 +32,7 @@ public class Reports {
             case "4":
                 showPreviousYear(transactions);
             case "5":
-                searchByVendors(transactions);
+                searchByVendor(transactions);
             case "0":
                 return;
             default:
@@ -82,4 +82,20 @@ private static void showPreviousYear(List<transaction> transactions) {
     transactions.stream()
             .filter(t -> t.getDate().getYear() == previousYear)
             .forEach(System.out::println);
+}
+private static void searchByVendor(List<transaction> transactions) {
+    System.out.print("\nEnter vendor name: ");
+    String vendor = scanner.nextLine().toLowerCase();
+
+    List<transaction> results = transactions.stream()
+            .filter(t -> t.getVendor().toLowerCase().contains(vendor))
+            .collect(Collectors.toList());
+
+    if (results.isEmpty()) {
+        System.out.println("No transactions found for vendor: " + vendor);
+    } else {
+        System.out.println("\n--- RESULTS FOR " + vendor.toUpperCase() + " ---");
+        results.forEach(System.out::println);
+    }
+}
 }
