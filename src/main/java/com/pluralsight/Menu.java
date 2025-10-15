@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Scanner;
 
@@ -38,5 +40,30 @@ public class Menu {
             }
 
         }
+    }
+
+    private static void addTransaction(List<transaction> transactions, boolean isDeposit) {
+        System.out.println("Enter description: ");
+        String description = scanner.nextLine();
+        System.out.println("Enter Vendor: ");
+        String vendor = scanner.nextLine();
+        System.out.println("Enter amount: ");
+        double amount = scanner.nextDouble();
+
+        if (!isDeposit) {
+            amount *= -1; // negative for payment
+        }
+
+        transaction transaction = new transaction(
+                LocalDate.now(),
+                LocalTime.now(),
+                description,
+                vendor,
+                amount
+        );
+
+        transaction.add(transaction);
+        TransactionFileManager.saveTransaction(transaction);
+        System.out.println("Transaction saved.");
     }
 }
