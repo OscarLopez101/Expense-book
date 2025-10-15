@@ -10,8 +10,8 @@ public class TransactionFileManager {
 
     private static final String FILE_NAME = "transactions.csv";
 
-    public static List<transaction> loadTransactions() {
-        List<transaction> transactions = new ArrayList<>();
+    public static List<Transaction> loadTransactions() {
+        List<Transaction> Transactions = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(FILE_NAME))) {
             String line;
@@ -23,17 +23,17 @@ public class TransactionFileManager {
                     String description = parts[2];
                     String vendor = parts[3];
                     double amount = Double.parseDouble(parts[4]);
-                    transactions.add(new transaction(date, time, description, vendor, amount));
+                    Transactions.add(new Transaction(date, time, description, vendor, amount));
                 }
             }
         } catch (IOException e) {
             System.out.println("No previous transactions found.");
         }
 
-        return transactions;
+        return Transactions;
     }
 
-    public static void saveTransaction(transaction transaction) {
+    public static void saveTransaction(Transaction transaction) {
         try (PrintWriter out = new PrintWriter(new FileWriter(FILE_NAME, true))) {
             out.printf("%s|%s|%s|%s|%.2f%n",
                     transaction.getDate(),

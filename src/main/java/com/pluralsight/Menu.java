@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Menu {
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void homeScreen(List<transaction> transactions) {
+    public static void homeScreen(List<Transaction> Transactions) {
 
         while (true) {
 
@@ -23,13 +23,13 @@ public class Menu {
             switch (choice) {
 
                 case "D":
-                    addTransaction(transactions, true);
+                    addTransaction(Transactions, true);
                     break;
                 case "P":
-                    addTransaction(transactions, false);
+                    addTransaction(Transactions, false);
                     break;
                 case "L":
-                    Ledger.displayLedger(transactions);
+                    Ledger.displayLedger(Transactions);
                     break;
                 case "X":
                     System.out.println("Goodbye");
@@ -42,7 +42,7 @@ public class Menu {
         }
     }
 
-    private static void addTransaction(List<transaction> transactions, boolean isDeposit) {
+    private static void addTransaction(List<Transaction> Transactions, boolean isDeposit) {
         System.out.println("Enter description: ");
         String description = scanner.nextLine();
         System.out.println("Enter Vendor: ");
@@ -54,7 +54,7 @@ public class Menu {
             amount *= -1; // negative for payment
         }
 
-        transaction transaction = new transaction(
+        Transaction transaction = new Transaction(
                 LocalDate.now(),
                 LocalTime.now(),
                 description,

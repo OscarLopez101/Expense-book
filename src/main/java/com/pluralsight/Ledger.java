@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Ledger {
 
-    public static void displayLedger(List<transaction> transactions) {
+    public static void displayLedger(List<Transaction> Transactions) {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
@@ -23,20 +23,20 @@ public class Ledger {
             switch (choice) {
 
                 case "A":
-                    transactions.forEach(System.out::println);
+                    Transactions.forEach(System.out::println);
                     break;
                 case "D":
-                    transactions.stream()
+                    Transactions.stream()
                             .filter(t -> t.getAmount() > 0)
                             .forEach(System.out::println);
                     break;
                 case "P":
-                    transactions.stream()
+                    Transactions.stream()
                             .filter(t -> t.getAmount() < 0)
                             .forEach(System.out::println);
                     break;
                 case "R":
-                    Reports.displayReports(transactions);
+                    Reports.displayReports(Transactions);
                     break;
                 case "H":
                     return;

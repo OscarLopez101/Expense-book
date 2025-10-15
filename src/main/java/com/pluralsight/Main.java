@@ -5,7 +5,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        List<transaction> transactions = TransactionFileManager.loadTransactions();
-        Menu.homeScreen(transactions);
+        List<Transaction> Transactions = TransactionFileManager.loadTransactions();
+        Menu.homeScreen(Transactions);
     }
 }
