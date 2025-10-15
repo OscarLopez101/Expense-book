@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
@@ -40,5 +41,36 @@ public class Reports {
         }
 
     }
+}
+
+private static void showMonthToDate(List<transaction> transactions) {
+    LocalDate now = LocalDate.now();
+    LocalDate startOfMonth = now.withDayOfMonth(1);
+
+    System.out.println("\n--- MONTH TO DATE ---");
+    transactions.stream()
+            .filter(t -> !t.getDate().isBefore(startOfMonth))
+            .forEach(System.out::println);
+}
+
+private static void showPreviousMonth(List<transaction> transactions) {
+    LocalDate now = LocalDate.now();
+    LocalDate firstDayPrevMonth = now.minusMonths(1).withDayOfMonth(1);
+    LocalDate lastDayPrevMonth = firstDayPrevMonth.withDayOfMonth(firstDayPrevMonth.lengthOfMonth());
+
+    System.out.println("\n--- PREVIOUS MONTH ---");
+    transactions.stream()
+            .filter(t -> !t.getDate().isBefore(firstDayPrevMonth) && !t.getDate().isAfter(lastDayPrevMonth))
+            .forEach(System.out::println);
+}
+
+private static void showYearToDate(List<transaction> transactions) {
+    LocalDate now = LocalDate.now();
+    LocalDate startOfYear = now.withDayOfYear(1);
+
+    System.out.println("\n--- YEAR TO DATE ---");
+    transactions.stream()
+            .filter(t -> !t.getDate().isBefore(startOfYear))
+            .forEach(System.out::println);
 }
 
