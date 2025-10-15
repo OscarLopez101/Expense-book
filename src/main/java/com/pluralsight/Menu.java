@@ -49,6 +49,8 @@ public class Menu {
         String vendor = scanner.nextLine();
         System.out.println("Enter amount: ");
         double amount = scanner.nextDouble();
+        scanner.nextLine();
+
 
         if (!isDeposit) {
             amount *= -1; // negative for payment
@@ -62,7 +64,7 @@ public class Menu {
                 amount
         );
 
-        transaction.add(transaction);
+        Transactions.add(transaction);
         TransactionFileManager.saveTransaction(transaction);
         System.out.println("Transaction saved.");
     }
