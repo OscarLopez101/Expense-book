@@ -50,7 +50,7 @@ public class Reports {
         LocalDate now = LocalDate.now();
         LocalDate startOfMonth = now.withDayOfMonth(1);
 
-        System.out.println("\n--- MONTH TO DATE ---");
+        System.out.println("\n MONTH TO DATE ");
         transactions.stream()
                 .filter(t -> !t.getDate().isBefore(startOfMonth))
                 .forEach(System.out::println);
@@ -61,7 +61,7 @@ public class Reports {
         LocalDate firstDayPrevMonth = now.minusMonths(1).withDayOfMonth(1);
         LocalDate lastDayPrevMonth = firstDayPrevMonth.withDayOfMonth(firstDayPrevMonth.lengthOfMonth());
 
-        System.out.println("\n--- PREVIOUS MONTH ---");
+        System.out.println("\n PREVIOUS MONTH ");
         transactions.stream()
                 .filter(t -> !t.getDate().isBefore(firstDayPrevMonth)
                         && !t.getDate().isAfter(lastDayPrevMonth))
@@ -72,7 +72,7 @@ public class Reports {
         LocalDate now = LocalDate.now();
         LocalDate startOfYear = now.withDayOfYear(1);
 
-        System.out.println("\n--- YEAR TO DATE ---");
+        System.out.println("\n YEAR TO DATE ");
         transactions.stream()
                 .filter(t -> !t.getDate().isBefore(startOfYear))
                 .forEach(System.out::println);
@@ -82,7 +82,7 @@ public class Reports {
         LocalDate now = LocalDate.now();
         int previousYear = now.minusYears(1).getYear();
 
-        System.out.println("\n--- PREVIOUS YEAR ---");
+        System.out.println("\n PREVIOUS YEAR ");
         transactions.stream()
                 .filter(t -> t.getDate().getYear() == previousYear)
                 .forEach(System.out::println);
@@ -99,7 +99,7 @@ public class Reports {
         if (results.isEmpty()) {
             System.out.println("No transactions found for vendor: " + vendor);
         } else {
-            System.out.println("\n--- RESULTS FOR " + vendor.toUpperCase() + " ---");
+            System.out.println("\n RESULTS FOR " + vendor.toUpperCase() );
             results.forEach(System.out::println);
         }
     }

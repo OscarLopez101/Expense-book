@@ -56,7 +56,7 @@ public class Transaction {
     }
 
     public void setAmount(double amount) {
-        this.Amount = amount;
+        Amount = amount;
     }
 
     // @Override

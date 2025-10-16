@@ -34,16 +34,22 @@ public class TransactionFileManager {
     }
 
     public static void saveTransaction(Transaction transaction) {
-        try (PrintWriter out = new PrintWriter(new FileWriter(FILE_NAME, true))) {
-            out.printf("%s|%s|%s|%s|%.2f%n",
+        try {
+            FileWriter writer = new FileWriter(FILE_NAME, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(writer);
+
+            bufferedWriter.write(String.format("%s|%s|%s|%s|%.2f%n",
                     transaction.getDate(),
                     transaction.getTime(),
                     transaction.getDescription(),
                     transaction.getVendor(),
-                    transaction.getAmount());
+                    transaction.getAmount()));
+
+            bufferedWriter.close();
+            writer.close();
+
         } catch (IOException e) {
             System.out.println("Error saving transaction: " + e.getMessage());
-
         }
     }
 }

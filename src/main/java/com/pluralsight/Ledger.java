@@ -13,7 +13,7 @@ public class Ledger {
 
             System.out.println("\nLedger menu");
             System.out.println("A) All");
-            System.out.println("B) Deposits");
+            System.out.println("D) Deposits");
             System.out.println("P) Payments");
             System.out.println("R) Reports");
             System.out.println("H) Home");
