@@ -37,7 +37,7 @@ The user can view or filter transactions and generate reports directly in the co
 
 ## Home Page
 
-<img width="887" height="411" alt="Screenshot 2025-10-16 192824" src="https://github.com/user-attachments/assets/c6701467-cb8b-4942-bab9-5d0fd015dc18" />
+height="105" alt="image" src="https://github.com/user-attachments/assets/fbe3a5fc-cd4e-4e1c-b2b0-614af1e16597" />
 
 ## Ledger Page
 
