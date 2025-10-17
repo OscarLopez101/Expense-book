@@ -1,9 +1,5 @@
 # Expense-book
 
-Welcome to your **Java + Markdown learning project**!  
-This file is both a **README template** for your Netflix-style app and a **workbook** with exercises to practice Markdown and Java fundamentals.
-
----
 
 ## 📖 Overview
 This project is a Java Command-Line Interface (CLI) application that allows users to track financial transactions for personal use.
@@ -39,23 +35,19 @@ The user can view or filter transactions and generate reports directly in the co
 - Previous Year
 - Search by Vendor  
 
-👉 **Exercise:**  
-  
-- 🌍live languge translations to live tv
+## Home Page
 
----
+<img width="887" height="411" alt="Screenshot 2025-10-16 192824" src="https://github.com/user-attachments/assets/c6701467-cb8b-4942-bab9-5d0fd015dc18" />
 
-## 🛠️ Tech Stack
+## Ledger Page
 
-| Technology  | Purpose         |
-|-------------|-----------------|
-| Java        | Backend logic   |
-| Spring Boot | REST API        |
-| MySQL       | Database        |
-| React       | Frontend (optional) |
+<img width="350" height="142" alt="image" src="https://github.com/user-attachments/assets/903bd48c-5cb4-4eba-8028-b3c7328343c3" />
 
-👉 **Exercise:**   
-Add **one more tool** you’re using (e.g., Docker, Hibernate, AWS). 
+## Report Page
 
-| AWS         | To host live tv |
----
+<img width="321" height="136" alt="image" src="https://github.com/user-attachments/assets/34693356-7248-40ff-b108-7124a7ce8d2f" />
+
+
+
+
+
