@@ -35,7 +35,7 @@ public class Menu {
                     System.out.println(Colors.GREEN + "===== Goodbye =====" + Colors.RESET);
                     return;
                 default:
-                    System.out.println("Invalid option");
+                    System.out.println(Colors.RED + "Invalid option" + Colors.RESET);
 
             }
 
