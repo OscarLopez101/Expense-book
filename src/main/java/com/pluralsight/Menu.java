@@ -12,11 +12,11 @@ public class Menu {
 
         while (true) {
 
-            System.out.println("\nHOME MENU");
+            System.out.println(Colors.CYAN + "\n==== HOME MENU ====" + Colors.RESET);
             System.out.println("D) Add Deposit");
             System.out.println("P) Make Payment (Debit)");
             System.out.println("L) Ledger");
-            System.out.println("X) Exit");
+            System.out.println("X)" + Colors.RED + " Exit" + Colors.RESET);
             System.out.print("Choose an option: ");
             String choice = scanner.nextLine().toUpperCase();
 
@@ -32,7 +32,7 @@ public class Menu {
                     Ledger.displayLedger(Transactions);
                     break;
                 case "X":
-                    System.out.println("Goodbye");
+                    System.out.println(Colors.GREEN + "===== Goodbye =====" + Colors.RESET);
                     return;
                 default:
                     System.out.println("Invalid option");

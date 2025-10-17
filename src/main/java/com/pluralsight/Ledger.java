@@ -11,13 +11,13 @@ public class Ledger {
 
         while (true) {
 
-            System.out.println("\nLedger menu");
+            System.out.println(Colors.CYAN + "\n==== LEDGER MENU ====" + Colors.RESET);
             System.out.println("A) All");
             System.out.println("D) Deposits");
             System.out.println("P) Payments");
             System.out.println("R) Reports");
-            System.out.println("H) Home");
-            System.out.println("Chose an option");
+            System.out.println("H)" + Colors.YELLOW + " Home" + Colors.RESET);
+            System.out.println("Chose an option:");
             String choice = scanner.nextLine().toUpperCase();
 
             switch (choice) {
@@ -41,7 +41,7 @@ public class Ledger {
                 case "H":
                     return;
                 default:
-                    System.out.println("Invalid option. Try again.");
+                    System.out.println(Colors.RED + "Invalid option. Try again." + Colors.RESET);
             }
             }
         }

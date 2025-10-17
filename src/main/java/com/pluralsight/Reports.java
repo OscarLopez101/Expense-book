@@ -11,13 +11,13 @@ public class Reports {
     public static void displayReports(List<Transaction> transactions) {
 
         while (true) {
-            System.out.println("\nREPORTS MENU");
+            System.out.println(Colors.CYAN + "\n===== REPORTS MENU =====" + Colors.RESET);
             System.out.println("1) Month to Date");
             System.out.println("2) Previous Month");
             System.out.println("3) Year to Date");
             System.out.println("4) Previous Year");
             System.out.println("5) Search by Vendor");
-            System.out.println("0) Back");
+            System.out.println("0)" + Colors.YELLOW + " Back" + Colors.RESET);
             System.out.print("Choose an option: ");
 
             String choice = scanner.nextLine();
@@ -41,7 +41,7 @@ public class Reports {
                 case "0":
                     return;
                 default:
-                    System.out.println("Invalid option. Try again.");
+                    System.out.println(Colors.RED + "Invalid option. Try again." + Colors.RESET);
             }
         }
     }
