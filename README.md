@@ -33,6 +33,7 @@ The user can view or filter transactions and generate reports directly in the co
 - Previous Month
 - Year-To-Date
 - Previous Year
+- Show Balance
 - Search by Vendor  
 
 ## Home Page
